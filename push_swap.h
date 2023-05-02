@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:17:54 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/04/26 18:55:48 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/02 16:49:56 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,21 @@
 # include <limits.h>
 
 // struct
+//s_node est une structure qui contient un entier (int) et un pointeur vers le prochain élément (struct s_node *next) de la pile. 
+//Cette structure est utilisée pour représenter chaque élément individuel de la pile.
+typedef struct s_node
+{
+    int value;
+    struct s_node *next;
+} t_node;
+
+//s_stack est une structure qui contient un pointeur vers le sommet de la pile (struct s_node *top) 
+//et la taille de la pile (int size). 
+//Cette structure est utilisée pour représenter l'ensemble de la pile et stocker les éléments de la pile en utilisant des nœuds s_node.
 typedef struct s_stack
 {
-	int				value;
-	int				index;
-	int				pos;
-	int				target_pos;
-	int				cost_a;
-	int				cost_b;
-	struct s_stack	*next;
+	t_node	*top;
+	int	size;
 }   t_stack;
 
 
@@ -34,9 +40,12 @@ typedef struct s_stack
 // main.c
 
 
-// utils.c
+// exit_free.c
 void    ft_exit_error(t_stack **stack_a, t_stack **stack_b);
 void	ft_free_stack(t_stack **stack);
+
+// initialization.c
+void	ft_initialisation(t_stack **stack_a, t_stack **stack_b, int argc, char **argv);
 
 // check.c
 int     ft_check_arg(char **argv);
@@ -49,5 +58,19 @@ int     ft_is_sorted(char **argv);
 int     ft_isdigit(int c);
 long    ft_atoi(const char *str);
 int     ft_is_sign(char c);
+
+// sort.c
+void	ft_sort(t_stack *stack_a, t_stack *stack_b);
+void	ft_sort_five(t_stack *stack_a, t_stack *stack_b);
+void	ft_sort_three(t_stack *stack);
+void	ft_sort_array(int *array, int len);
+int		ft_find_median(t_stack *stack, int len);
+void	ft_split_stack_a(t_stack *stack_a, t_stack *stack_b, int len_a);
+void    ft_merge_stack_b(t_stack **stack_a, t_stack **stack_b, int size);
+
+// sort_utils.c
+void    ft_push(t_stack *stack, int value);
+int		ft_pop(t_stack *stack);
+void	ft_rotate(t_stack *stack);
 
 #endif

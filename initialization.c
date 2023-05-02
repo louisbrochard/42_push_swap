@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   initialization.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 17:16:20 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/04/26 17:43:28 by louisbrocha      ###   ########.fr       */
+/*   Created: 2023/05/02 15:56:30 by louisbrocha       #+#    #+#             */
+/*   Updated: 2023/05/02 16:47:15 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_stack(t_stack **stack)
+void	ft_initialisation(t_stack **stack_a, t_stack **stack_b, int argc, char **argv)
 {
-	t_stack	*tmp;
+    int i;
 
-	if (!stack || !(*stack))
-		return ;
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
-	}
-	*stack = NULL;
-}
+    //Initialisation de stack A
+    *stack_a = malloc(sizeof(t_stack));
+    (*stack_a)->top = NULL;
+    (*stack_a)->size = 0;
+    i = argc - 1;
+    while(i-- > 0)
+        ft_push(*stack_a, ft_atoi(argv[i]));
 
-void	ft_exit_error(t_stack **stack_a, t_stack **stack_b)
-{
-	if (stack_a == NULL || *stack_a != NULL)
-		ft_free_stack(stack_a);
-	if (stack_b == NULL || *stack_b != NULL)
-		ft_free_stack(stack_b);
-	write(2, "Error\n", 6);
-	exit (1);
+    //Initialisation de stack B
+    *stack_b = malloc(sizeof(t_stack));
+    (*stack_b)->top = NULL;
+    (*stack_b)->size = 0;
 }
