@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:16:20 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/02 16:04:51 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/03 15:43:21 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,6 @@ void	ft_free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-
-/*
-void	ft_free_stack(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	if (!stack || !(*stack))
-		return ;
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
-	}
-	*stack = NULL;
-}
-*/
-
 void	ft_exit_error(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a && *stack_a)
@@ -57,15 +39,3 @@ void	ft_exit_error(t_stack **stack_a, t_stack **stack_b)
 	write(2, "Error\n", 6);
 	exit (1);
 }
-
-/*
-void	ft_exit_error(t_stack **stack_a, t_stack **stack_b)
-{
-	if (stack_a == NULL || *stack_a != NULL)
-		ft_free_stack(stack_a);
-	if (stack_b == NULL || *stack_b != NULL)
-		ft_free_stack(stack_b);
-	write(2, "Error\n", 6);
-	exit (1);
-}
-*/

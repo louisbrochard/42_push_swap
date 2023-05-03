@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:17:54 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/02 16:49:56 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/03 18:05:32 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
+# include "ft_printf/include/ft_printf.h"
 
 // struct
 //s_node est une structure qui contient un entier (int) et un pointeur vers le prochain élément (struct s_node *next) de la pile. 
@@ -46,6 +47,7 @@ void	ft_free_stack(t_stack **stack);
 
 // initialization.c
 void	ft_initialisation(t_stack **stack_a, t_stack **stack_b, int argc, char **argv);
+void    ft_push(t_stack *stack, int value);
 
 // check.c
 int     ft_check_arg(char **argv);
@@ -59,18 +61,20 @@ int     ft_isdigit(int c);
 long    ft_atoi(const char *str);
 int     ft_is_sign(char c);
 
-// sort.c
-void	ft_sort(t_stack *stack_a, t_stack *stack_b);
-void	ft_sort_five(t_stack *stack_a, t_stack *stack_b);
-void	ft_sort_three(t_stack *stack);
-void	ft_sort_array(int *array, int len);
-int		ft_find_median(t_stack *stack, int len);
-void	ft_split_stack_a(t_stack *stack_a, t_stack *stack_b, int len_a);
-void    ft_merge_stack_b(t_stack **stack_a, t_stack **stack_b, int size);
 
-// sort_utils.c
-void    ft_push(t_stack *stack, int value);
-int		ft_pop(t_stack *stack);
-void	ft_rotate(t_stack *stack);
+// op.c
+void	ft_op_swap(t_stack *stack, char c);
+void	ft_op_push(t_stack *stack_src, t_stack *stack_dest, char c);
+void    ft_op_rotate(t_stack *stack, char c);
+void	ft_op_rev_rotate(t_stack *stack, char c);
+
+// short_sort.c
+int ft_is_stack_sorted(t_stack *stack);
+int get_min(t_stack *stack);
+void	ft_insertion_sort(t_stack *stack_a, t_stack *stack_b);
+
+// chatgpt.c
+
+
 
 #endif
