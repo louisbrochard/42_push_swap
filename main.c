@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:09:21 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/03 18:08:24 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/03 18:13:20 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main(int argc, char **argv)
 {
-    int i;
     t_stack *stack_a;
     t_stack *stack_b;
 
