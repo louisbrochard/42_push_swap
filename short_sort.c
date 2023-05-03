@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:49:04 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/03 18:04:30 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/03 18:24:35 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,13 @@ void	ft_insertion_sort(t_stack *stack_a, t_stack *stack_b)
         ft_op_rotate(stack_a, 'a');
     while (ft_is_stack_sorted(stack_a) == 1)
     {
+        if (stack_a->size == 2)
+            ft_op_rotate(stack_a, 'a');
         min = get_min(stack_a);
         while (stack_a->top->value != min)
             ft_op_rotate(stack_a, 'a');
-        ft_op_push(stack_a, stack_b, 'b');
+        if (ft_is_stack_sorted(stack_a) == 1)
+            ft_op_push(stack_a, stack_b, 'b');
     }
     while (stack_b->size != 0)
         ft_op_push(stack_b, stack_a, 'a');
