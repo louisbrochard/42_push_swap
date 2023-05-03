@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:17:54 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/03 18:05:32 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/03 18:12:46 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
-# include "ft_printf/include/ft_printf.h"
 
 // struct
 //s_node est une structure qui contient un entier (int) et un pointeur vers le prochain élément (struct s_node *next) de la pile. 
