@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:06:02 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/03 15:53:29 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/04 15:42:58 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	ft_op_push(t_stack *stack_src, t_stack *stack_dest, char c)
 		return ;
 	src_top->next = stack_dest->top;
 	stack_dest->top = src_top;
-    stack_dest->size = stack_dest->size + 1;
-    stack_src-> size = stack_src->size - 1;
+	stack_dest->size = stack_dest->size + 1;
+	stack_src->size = stack_src->size - 1;
 	if (c == 'a')
-        printf("pa\n");
+		printf("pa\n");
 	else if (c == 'b')
 		printf("pb\n");
 }
@@ -51,26 +51,25 @@ void	ft_op_swap(t_stack *stack, char c)
 		printf("sb\n");
 }
 
-void    ft_op_rotate(t_stack *stack, char c)
+void	ft_op_rotate(t_stack *stack, char c)
 {
-    t_node  *first;
-    t_node  *last;
+	t_node	*first;
+	t_node	*last;
 
-    if (!stack || !stack->top || !stack->top->next)
-        return ;
-    first = stack->top;
-    last = stack->top;
-    while (last->next != NULL)
-        last = last->next;
-    last->next = first;
-    stack->top = first->next;
-    first->next = NULL;
-    if (c == 'a')
-        printf("ra\n");
-    else if (c == 'b')
-        printf("rb\n");
+	if (!stack || !stack->top || !stack->top->next)
+		return ;
+	first = stack->top;
+	last = stack->top;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = first;
+	stack->top = first->next;
+	first->next = NULL;
+	if (c == 'a')
+		printf("ra\n");
+	else if (c == 'b')
+		printf("rb\n");
 }
-
 
 void	ft_op_rev_rotate(t_stack *stack, char c)
 {

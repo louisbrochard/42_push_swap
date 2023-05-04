@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:28:11 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/04/26 18:55:11 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/04 15:13:21 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-int ft_is_sign(char c)
+int	ft_is_sign(char c)
 {
-    if (c == '-' || c == '+')
-        return (1);
-    return (0);
+	if (c == '-' || c == '+')
+		return (1);
+	return (0);
 }
 
 long	ft_atoi(const char *str)
 {
 	long	neg;
-	int	i;
+	int		i;
 	long	num;
 
 	i = 0;
