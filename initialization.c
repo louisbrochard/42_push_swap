@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:56:30 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/03 15:44:37 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/05 13:41:41 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_push_init(t_stack *stack, int value)
 	stack->size++;
 }
 
-void	ft_initialisation(t_stack **stack_a, t_stack **stack_b, int argc, char **argv)
+void	ft_init(t_stack **stack_a, t_stack **stack_b, int argc, char **argv)
 {
     int i;
 

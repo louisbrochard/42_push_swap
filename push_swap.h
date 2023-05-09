@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:17:54 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/04 15:54:43 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/09 15:04:32 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,14 @@ void	ft_insertion_sort(t_stack *stack_a, t_stack *stack_b);
 
 // chatgpt.c
 
+/*
+//A
+void			ft_work_a(t_begin *begin, int len);
 
+//B
+void			ft_work_b(t_begin *begin, int len);
+static void		ft_place(t_begin *begin, int *r);
+static void		ft_median_sort(t_begin *begin, int len, int *r, int *p);
+*/
 
 #endif
