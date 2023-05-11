@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:09:21 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/05 13:41:49 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/11 14:17:11 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,13 @@ int main(int argc, char **argv)
     if (ft_is_sorted(argv) == 0)
         return (0);
     ft_init(&stack_a, &stack_b, argc, argv);
+    /*
+    if (argc < 6)
+        ft_insertion_sort(stack_a, stack_b);
+    else
+        quick_sort(stack_a, stack_b);
+*/
     ft_insertion_sort(stack_a, stack_b);
-
 	printf("===================STACK A====================\n");
 	t_node *curr = stack_a->top;
     while(curr)

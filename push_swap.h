@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:17:54 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/09 15:04:32 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/11 23:54:24 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,23 @@ void	ft_op_rotate(t_stack *stack, char c);
 void	ft_op_rev_rotate(t_stack *stack, char c);
 
 // short_sort.c
+int	ft_is_stack_sorted2(t_stack *stack);
 int		ft_is_stack_sorted(t_stack *stack);
 int		get_min(t_stack *stack);
 void	ft_insertion_sort(t_stack *stack_a, t_stack *stack_b);
 
+
+// quick_sort.c
+void quick_sort(t_stack *stack_a, t_stack *stack_b);
+int     ft_get_median(t_stack *stack_a, int len);
+void	ft_sort_tab(int *tab, int len);
+
+
 // chatgpt.c
 
-/*
 //A
-void			ft_work_a(t_begin *begin, int len);
-
+void			ft_quick_sort_a(t_stack *stack_a, t_stack *stack_b, int len)
 //B
-void			ft_work_b(t_begin *begin, int len);
-static void		ft_place(t_begin *begin, int *r);
-static void		ft_median_sort(t_begin *begin, int len, int *r, int *p);
-*/
+void			ft_quick_sort_b(t_stack *stack_a, t_stack *stack_b);
 
 #endif

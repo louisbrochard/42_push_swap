@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:23:45 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/09 15:03:57 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/11 14:15:20 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,41 @@ int     ft_get_median(t_stack *stack_a, int len)
         median = tab[(len / 2)];
     free(tab);
     return (median);
+}
+
+// Fonction de tri rapide (quicksort)
+void quick_sort(t_stack *stack_a, t_stack *stack_b)
+{	
+	int median;
+	int	i;
+
+	if (stack_a->size <= 3)
+	{
+		ft_insertion_sort(stack_a, stack_b);
+		return ;
+	}
+	i = 0;
+	median = ft_get_median(stack_a, stack_a->size);
+	while (i <= stack_a->size)
+	{
+		if (stack_a->top->value <= median)
+			ft_op_push(stack_a, stack_b, 'b');
+		else
+			ft_op_rotate(stack_a, 'a');
+		i++;
+	}
+	quick_sort(stack_a, stack_b);
+	quick_sort(stack_b, stack_a);
+
+	// Fusionner les sous-ensembles triés
+	while (stack_b->size > 0)
+	{
+		ft_op_push(stack_b, stack_a, 'a');
+	}
+
+	// Effectuer d'autres opérations nécessaires pour obtenir le stack A trié
+	// ...
+
+	// Mettre à jour le compteur de mouvements
+	// ...
 }

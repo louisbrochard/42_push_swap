@@ -6,11 +6,27 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:49:04 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/04 15:46:17 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/11 19:54:21 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_is_stack_sorted2(t_stack *stack)
+{
+	t_node	*current;
+
+	if (!stack || !stack->top)
+		return (1);
+	current = stack->top;
+	while (current->next)
+	{
+		if (current->value < current->next->value)
+			return (1);
+		current = current->next;
+	}
+	return (0);
+}
 
 int	ft_is_stack_sorted(t_stack *stack)
 {
