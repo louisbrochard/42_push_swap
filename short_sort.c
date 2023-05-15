@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:49:04 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/11 19:54:21 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/15 01:52:27 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	ft_is_stack_sorted(t_stack *stack)
 	return (0);
 }
 
+/*
 int	get_min(t_stack *stack)
 {
 	int		min;
@@ -78,4 +79,63 @@ void	ft_insertion_sort(t_stack *stack_a, t_stack *stack_b)
 	}
 	while (stack_b->size != 0)
 		ft_op_push(stack_b, stack_a, 'a');
+}
+*/
+
+void	ft_sort_2_elem(t_stack *stack_a)
+{
+	t_node *elem;
+
+	elem = stack_a->top;
+	if (elem->value > elem->next->value)
+		ft_op_swap(stack_a, 'a');
+}
+
+static void		ft_rot(t_node **e, t_node **s, t_stack *stack_a)
+{
+	t_node		*elem;
+	t_node		*suiv;
+
+	elem = *e;
+	suiv = *s;
+	if (elem->value < suiv->value)
+	{
+		if (elem->value < suiv->next->value)
+			ft_op_rev_rotate(stack_a, 'a');
+		else
+			ft_op_rotate(stack_a, 'a');
+	}
+}
+
+void	ft_deal_algo(t_stack *stack_a)
+{
+	ft_op_swap(stack_a, 'a');
+	ft_op_rotate(stack_a, 'a');
+	ft_op_swap(stack_a, 'a');
+	ft_op_rev_rotate(stack_a, 'a');
+}
+
+void			ft_sort_3_elem(t_stack *stack_a)
+{
+	t_node		*elem;
+	t_node		*suiv;
+
+	while (stack_a->top != NULL && ft_is_stack_sorted(stack_a) == 1)
+	{
+		elem = stack_a->top;
+		suiv = elem->next;
+		if ((suiv->next->value > suiv->value) && (elem->value > suiv->next->value))
+		{
+			ft_deal_algo(stack_a);
+		}
+		if (elem->value > suiv->value)
+		{
+			if (elem->value < suiv->next->value)
+				ft_op_swap(stack_a, 'a');
+			else
+				ft_op_rotate(stack_a, 'a');
+		}
+		else if (stack_a->top != NULL && ft_is_stack_sorted(stack_a) == 1)
+			ft_rot(&elem, &suiv, stack_a);
+	}
 }

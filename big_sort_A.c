@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:45:29 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/11 23:50:41 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/15 00:58:05 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static int		ft_compare_with_median(t_stack *stack_a, int n, int median)
 	return (0);
 }
 
+/*
 static void			ft_sort_min_a(t_stack *stack_a)
 {
     int len;
@@ -45,17 +46,16 @@ static void			ft_sort_min_a(t_stack *stack_a)
 	if (len > 1 && stack_a->top->value > stack_a->top->next->value)
         ft_op_swap(stack_a, 'a');
 }
+*/
 
-static void		ft_median_sort(t_stack *stack_a, t_stack *stack_b, int *r, int *p)
+static void		ft_median_sort(t_stack *stack_a, t_stack *stack_b, int len, int *r, int *p)
 {
 	int		i;
 	int		median;
-	t_node	*tmp;
-    int len;
 
 	i = 0;
-    len = stack_a->size;
-	median = ft_get_median(stack_a, stack_a->size);
+	median = 0;
+	median = ft_get_median(stack_a, len, 1);
 	while (ft_compare_with_median(stack_a, len - i, median) && i++ < len)
 	{
 		if (stack_a->top->value < median)
@@ -98,25 +98,30 @@ void			ft_quick_sort_a(t_stack *stack_a, t_stack *stack_b, int len)
 {
 	int			r;
 	int			p;
-	t_node		*tmp;
 
 	r = 0;
 	p = 0;
 	if (len <= 3)
 	{
-		ft_sort_min_a(stack_a);
-		return ;
+		if (len == 3)
+		{
+			ft_sort_3_elem(stack_a);
+			return ;
+		}
+		if (len == 2)
+		{
+			ft_sort_2_elem(stack_a);
+			return ;
+		}
 	}
 	if (stack_a->top != NULL && ft_is_stack_sorted(stack_a) == 0)
 		return ;
-	ft_median_sort(stack_a, &r, &p);
+	ft_median_sort(stack_a, stack_b, len - p, &r, &p);
 	ft_place(stack_a, &r);
-	ft_quick_sort_a(stack_a, stack_b, stack_a->size);
-	ft_quick_sort_b(stack_a, stack_b);
+	ft_quick_sort_a(stack_a, stack_b, (len - p));
+	ft_quick_sort_b(stack_a, stack_b, p);
 	while (p-- && stack_b->top != NULL)
 	{
-		tmp = stack_b->top->next;
 		ft_op_push(stack_b, stack_a, 'a');
-		stack_b->top = tmp;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:09:21 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/11 14:17:11 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/15 01:52:50 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,15 @@ int main(int argc, char **argv)
     if (ft_is_sorted(argv) == 0)
         return (0);
     ft_init(&stack_a, &stack_b, argc, argv);
-    /*
-    if (argc < 6)
-        ft_insertion_sort(stack_a, stack_b);
+    if (argc == 3)
+		ft_op_rotate(stack_a, 'a');
+    else if (argc == 4)
+        ft_sort_3_elem(stack_a);
     else
         quick_sort(stack_a, stack_b);
-*/
-    ft_insertion_sort(stack_a, stack_b);
+
+
+/*
 	printf("===================STACK A====================\n");
 	t_node *curr = stack_a->top;
     while(curr)
@@ -48,5 +50,14 @@ int main(int argc, char **argv)
     printf("=================PARAMETRES=====================\n");
     printf("Size A : %d\n", stack_a->size);
     printf("Size B : %d\n", stack_b->size);
+    printf("====================FIN========================\n");
+*/
+
+
+
+    ft_lst_del(&stack_a);
+    ft_lst_del(&stack_b);
+    free(stack_a);
+    free(stack_b);
     return (0);
 }
