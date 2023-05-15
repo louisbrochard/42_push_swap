@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:49:04 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 01:52:27 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/15 02:27:12 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void			ft_sort_3_elem(t_stack *stack_a)
 		{
 			ft_deal_algo(stack_a);
 		}
-		if (elem->value > suiv->value)
+		else if (elem->value > suiv->value)
 		{
 			if (elem->value < suiv->next->value)
 				ft_op_swap(stack_a, 'a');
