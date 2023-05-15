@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/07/11 08:50:37 by lbrochar          #+#    #+#             */
+/*   Updated: 2023/05/15 13:28:48 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+size_t	ft_strlcat(char *dest, char const *src, size_t n)
 {
-	t_node	*tmp;
-    t_node  *elem;
+	size_t	i;
+	size_t	j;
 
-    elem = (*stack)->top;
-	while (elem != NULL)
+	i = 0;
+	j = 0;
+	if (n == 0)
+		return (ft_strlen(src));
+	while (dest[i] && i < n)
+		i++;
+	while (src[j] && n > 0 && i + j < n - 1)
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		dest[i + j] = src[j];
+		j++;
 	}
-	free(elem);
+	if (i < n)
+		dest[i + j] = '\0';
+	return (i + ft_strlen(src));
 }

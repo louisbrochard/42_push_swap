@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/12/07 11:32:46 by louisbrocha       #+#    #+#             */
+/*   Updated: 2023/05/15 13:27:29 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_node	*tmp;
-    t_node  *elem;
+	t_list	*position;
 
-    elem = (*stack)->top;
-	while (elem != NULL)
+	if (!lst)
+		return ;
+	while (*lst != NULL)
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		position = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = position;
 	}
-	free(elem);
 }

@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2023/02/11 23:06:35 by louisbrocha       #+#    #+#             */
+/*   Updated: 2023/05/15 13:43:01 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/ft_printf.h"
 
-void		ft_lst_del(t_stack **stack)
+static int	ft_nbrlen(unsigned int n)
 {
-	t_node	*tmp;
-    t_node  *elem;
+	int	len;
 
-    elem = (*stack)->top;
-	while (elem != NULL)
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		len++;
+		n /= 10;
 	}
-	free(elem);
+	return (len);
+}
+
+int ft_print_unsigned(int n)
+{
+    unsigned int u = (unsigned int)n;
+    int len;
+    char c;
+
+    len = ft_nbrlen(u); 
+    if (u >= 10)
+        ft_print_unsigned(u / 10);
+    c = u % 10 + '0';
+    ft_print_char(c);
+    return (len);
 }

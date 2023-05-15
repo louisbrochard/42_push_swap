@@ -6,11 +6,11 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:16:20 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/04 15:13:58 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/15 14:16:27 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_free_stack(t_stack **stack)
 {

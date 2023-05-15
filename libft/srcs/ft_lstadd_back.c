@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/11/23 14:45:34 by louisbrocha       #+#    #+#             */
+/*   Updated: 2023/05/15 13:27:20 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_node	*tmp;
-    t_node  *elem;
+	t_list	*lst_bis;
 
-    elem = (*stack)->top;
-	while (elem != NULL)
-	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
-	}
-	free(elem);
+	lst_bis = ft_lstlast(*lst);
+	if (lst_bis == NULL)
+		*lst = new;
+	else
+		lst_bis->next = new;
 }

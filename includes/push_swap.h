@@ -6,7 +6,7 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:17:54 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 00:20:02 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/15 14:14:04 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
+# include "../libft/includes/ft_printf.h"
+# include "../libft/includes/libft.h"
+# include "../libft/includes/get_next_line.h"
 
 typedef struct s_node
 {
@@ -49,7 +52,7 @@ int		ft_is_sorted(char **argv);
 
 // check_utils.c
 int		ft_isdigit(int c);
-long	ft_atoi(const char *str);
+long	ft_atoi2(const char *str);
 int		ft_is_sign(char c);
 
 

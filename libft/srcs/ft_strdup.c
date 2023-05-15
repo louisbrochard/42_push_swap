@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/07/14 11:49:02 by lbrochar          #+#    #+#             */
+/*   Updated: 2023/05/15 13:28:33 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	t_node	*tmp;
-    t_node  *elem;
+	int	i;
 
-    elem = (*stack)->top;
-	while (elem != NULL)
+	i = 0;
+	while (src[i] != '\0')
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		dest[i] = src[i];
+		i++;
 	}
-	free(elem);
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	*ft_strdup(const char *src)
+{
+	char	*dest;
+
+	dest = malloc((ft_strlen(src) + 1) * sizeof(char));
+	if (!dest)
+		return (NULL);
+	ft_strcpy(dest, src);
+	return (dest);
 }

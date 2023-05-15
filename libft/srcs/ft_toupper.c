@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/11/18 11:07:57 by lbrochar          #+#    #+#             */
+/*   Updated: 2023/05/15 13:29:23 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+int	ft_toupper(int c)
 {
-	t_node	*tmp;
-    t_node  *elem;
-
-    elem = (*stack)->top;
-	while (elem != NULL)
+	if (c >= 97 && c <= 122)
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		c = c - 32;
+		return (c);
 	}
-	free(elem);
+	return (c);
 }

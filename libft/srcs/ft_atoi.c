@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_utils.c                                      :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 17:28:11 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:22 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/11/18 10:14:21 by lbrochar          #+#    #+#             */
+/*   Updated: 2023/05/15 13:27:00 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-int	ft_isdigit(int c)
+int	ft_atoi(const char *str)
 {
-	if (c > 47 && c < 58)
-		return (1);
-	return (0);
-}
-
-int	ft_is_sign(char c)
-{
-	if (c == '-' || c == '+')
-		return (1);
-	return (0);
-}
-
-long	ft_atoi2(const char *str)
-{
-	long	neg;
-	int		i;
-	long	num;
+	int	neg;
+	int	i;
+	int	num;
 
 	i = 0;
 	neg = 1;

@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/11/18 09:43:23 by lbrochar          #+#    #+#             */
+/*   Updated: 2023/05/15 13:26:57 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+int	ft_isalpha(int c)
 {
-	t_node	*tmp;
-    t_node  *elem;
-
-    elem = (*stack)->top;
-	while (elem != NULL)
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		return (1);
 	}
-	free(elem);
+	return (0);
 }

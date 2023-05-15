@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/12/06 16:23:44 by louisbrocha       #+#    #+#             */
+/*   Updated: 2023/05/15 13:28:57 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_node	*tmp;
-    t_node  *elem;
+	int		i;
+	int		len;
+	char	*str;
 
-    elem = (*stack)->top;
-	while (elem != NULL)
+	i = 0;
+	if (!s || !f)
+		return (0);
+	len = ft_strlen(s);
+	str = malloc(sizeof(*f) * len + 1);
+	if (str == NULL)
+		return (0);
+	while (i < len)
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		str[i] = f(i, s[i]);
+		i++;
 	}
-	free(elem);
+	str[i] = '\0';
+	return (str);
 }

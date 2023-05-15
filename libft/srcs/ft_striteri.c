@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/12/07 09:54:56 by louisbrocha       #+#    #+#             */
+/*   Updated: 2023/05/15 13:28:36 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	t_node	*tmp;
-    t_node  *elem;
+	int	i;
+	int	len;
 
-    elem = (*stack)->top;
-	while (elem != NULL)
+	if (s == NULL || f == NULL)
+		return ;
+	i = 0;
+	len = ft_strlen(s);
+	while (i < len)
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		f(i, &s[i]);
+		i++;
 	}
-	free(elem);
 }

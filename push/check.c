@@ -6,11 +6,11 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:20:18 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/04 15:12:12 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/15 14:16:06 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	ft_is_sorted(char **argv)
 {
@@ -23,7 +23,7 @@ int	ft_is_sorted(char **argv)
 		len++;
 	while (i != len - 1)
 	{
-		if (ft_atoi(argv[i]) > ft_atoi(argv[i + 1]))
+		if (ft_atoi2(argv[i]) > ft_atoi2(argv[i + 1]))
 			return (1);
 		i++;
 	}
@@ -36,7 +36,7 @@ int	ft_argv_is_nb(char *str)
 	long	check;
 
 	i = 0;
-	check = ft_atoi(str);
+	check = ft_atoi2(str);
 	if (check > 2147483647 || check < INT_MIN)
 		return (1);
 	if (ft_is_sign(str[i]) == 1)
@@ -64,7 +64,7 @@ int	ft_check_duplicate(char **argv)
 	{
 		while (j != 0)
 		{
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+			if (ft_atoi2(argv[i]) == ft_atoi2(argv[j]))
 				return (1);
 			j--;
 		}

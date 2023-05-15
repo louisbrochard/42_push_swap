@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/11/30 11:21:13 by louisbrocha       #+#    #+#             */
+/*   Updated: 2023/05/15 13:29:05 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+char	*ft_strrchr(const char *s, int c)
 {
-	t_node	*tmp;
-    t_node  *elem;
+	int	i;
 
-    elem = (*stack)->top;
-	while (elem != NULL)
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i--;
 	}
-	free(elem);
+	return (NULL);
 }

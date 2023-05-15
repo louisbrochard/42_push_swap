@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2023/01/16 15:10:15 by louisbrocha       #+#    #+#             */
+/*   Updated: 2023/05/15 13:42:58 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/ft_printf.h"
 
-void		ft_lst_del(t_stack **stack)
+int ft_print_str (const char  *str)
 {
-	t_node	*tmp;
-    t_node  *elem;
+    int i; 
 
-    elem = (*stack)->top;
-	while (elem != NULL)
-	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
-	}
-	free(elem);
+    i = 0;
+    if (str == NULL)
+    {
+        write (1, "(null)", 6);
+        return (6);
+    }
+    while (str[i] != '\0')
+    {
+        write (1, &str[i], 1);
+        i++;
+    }
+    return (i);
 }

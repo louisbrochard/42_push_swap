@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/12/12 16:18:25 by lbrochar          #+#    #+#             */
+/*   Updated: 2023/05/15 13:26:59 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+void	ft_bzero(void *s, size_t n)
 {
-	t_node	*tmp;
-    t_node  *elem;
+	unsigned int	i;
 
-    elem = (*stack)->top;
-	while (elem != NULL)
+	i = 0;
+	while (i < n)
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		*((char *)s + i) = 0;
+		i++;
 	}
-	free(elem);
 }

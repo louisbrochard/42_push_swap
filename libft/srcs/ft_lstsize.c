@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/11/23 14:22:16 by louisbrocha       #+#    #+#             */
+/*   Updated: 2023/05/15 13:27:50 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+int	ft_lstsize(t_list *lst)
 {
-	t_node	*tmp;
-    t_node  *elem;
+	int	n;
 
-    elem = (*stack)->top;
-	while (elem != NULL)
+	n = 0;
+	while (lst)
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		n++;
+		lst = lst->next;
 	}
-	free(elem);
+	return (n);
 }

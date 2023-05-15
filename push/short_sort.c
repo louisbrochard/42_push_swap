@@ -6,11 +6,11 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:49:04 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 02:27:12 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/15 14:16:47 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	ft_is_stack_sorted2(t_stack *stack)
 {

@@ -6,11 +6,11 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:45:22 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 00:53:30 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/15 14:16:19 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static int		ft_compare_with_median(t_stack *stack_b, int n, int median)
 {

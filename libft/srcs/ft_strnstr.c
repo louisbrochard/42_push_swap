@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/12/06 11:23:41 by louisbrocha       #+#    #+#             */
+/*   Updated: 2023/05/15 13:29:03 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	t_node	*tmp;
-    t_node  *elem;
+	size_t	i;
+	size_t	j;
 
-    elem = (*stack)->top;
-	while (elem != NULL)
+	i = 0;
+	if (s2[i] == '\0')
+		return ((char *)s1);
+	if (len == 0 || s1[i] == '\0')
+		return (0);
+	while (s1 && i < len)
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		j = 0;
+		while (s1[i + j] == s2[j] && i + j < len)
+		{
+			if (s2[j + 1] == '\0')
+				return ((char *)s1 + i);
+			j++;
+		}
+		i++;
 	}
-	free(elem);
+	return (NULL);
 }

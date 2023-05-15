@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_del.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 00:17:47 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:33 by louisbrocha      ###   ########.fr       */
+/*   Created: 2022/11/18 13:38:36 by lbrochar          #+#    #+#             */
+/*   Updated: 2023/05/15 13:29:00 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void		ft_lst_del(t_stack **stack)
+int	ft_strncmp(const char *first, const char *second, size_t length)
 {
-	t_node	*tmp;
-    t_node  *elem;
-
-    elem = (*stack)->top;
-	while (elem != NULL)
+	if (length == 0)
+		return (0);
+	while ((*first == *second) && (*first != '\0')
+		&& (*second != '\0') && --length)
 	{
-		tmp = elem->next;
-		free(elem);
-		elem = tmp;
+		first++;
+		second++;
 	}
-	free(elem);
+	return ((unsigned char)*first - (unsigned char)*second);
 }

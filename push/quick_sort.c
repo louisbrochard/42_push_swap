@@ -6,11 +6,11 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:23:45 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 00:14:39 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/15 14:16:43 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_sort_tab(int *tab, int len)
 {

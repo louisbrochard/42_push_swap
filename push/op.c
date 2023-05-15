@@ -6,11 +6,11 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:06:02 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/04 15:42:58 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/15 14:18:32 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_op_push(t_stack *stack_src, t_stack *stack_dest, char c)
 {
@@ -28,9 +28,9 @@ void	ft_op_push(t_stack *stack_src, t_stack *stack_dest, char c)
 	stack_dest->size = stack_dest->size + 1;
 	stack_src->size = stack_src->size - 1;
 	if (c == 'a')
-		printf("pa\n");
+		ft_printf("pa\n");
 	else if (c == 'b')
-		printf("pb\n");
+		ft_printf("pb\n");
 }
 
 void	ft_op_swap(t_stack *stack, char c)
@@ -46,9 +46,9 @@ void	ft_op_swap(t_stack *stack, char c)
 	second->next = first;
 	stack->top = second;
 	if (c == 'a')
-		printf("sa\n");
+		ft_printf("sa\n");
 	if (c == 'b')
-		printf("sb\n");
+		ft_printf("sb\n");
 }
 
 void	ft_op_rotate(t_stack *stack, char c)
@@ -66,9 +66,9 @@ void	ft_op_rotate(t_stack *stack, char c)
 	stack->top = first->next;
 	first->next = NULL;
 	if (c == 'a')
-		printf("ra\n");
+		ft_printf("ra\n");
 	else if (c == 'b')
-		printf("rb\n");
+		ft_printf("rb\n");
 }
 
 void	ft_op_rev_rotate(t_stack *stack, char c)
@@ -88,7 +88,7 @@ void	ft_op_rev_rotate(t_stack *stack, char c)
 	last->next = stack->top;
 	stack->top = last;
 	if (c == 'a')
-		printf("rra\n");
+		ft_printf("rra\n");
 	if (c == 'b')
-		printf("rrb\n");
+		ft_printf("rrb\n");
 }
