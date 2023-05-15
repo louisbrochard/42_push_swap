@@ -6,7 +6,7 @@
 #    By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 13:31:54 by louisbrocha       #+#    #+#              #
-#    Updated: 2023/05/15 14:04:59 by louisbrocha      ###   ########.fr        #
+#    Updated: 2023/05/15 15:36:06 by louisbrocha      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ SRCS		:= ft_strlen.c ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c
 				ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstnew.c ft_lstiter.c ft_lstmap.c \
 				ft_strlcat.c ft_memcpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_strdup.c ft_substr.c ft_strtrim.c ft_itoa.c \
 				ft_lstadd_front.c ft_split.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-				ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+				ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_strcmp.c \
 				ft_printf.c ft_print_char.c ft_print_nbr.c ft_print_str.c ft_print_unsigned.c ft_print_hexa.c ft_print_ptr.c \
 				get_next_line.c get_next_line_utils.c
 			   

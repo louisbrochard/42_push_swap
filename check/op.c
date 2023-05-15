@@ -6,13 +6,13 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:06:02 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 16:21:56 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/15 15:21:04 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker.h"
 
-void	ft_op_push(t_stack *stack_src, t_stack *stack_dest, char c)
+void	ft_op_push(t_stack *stack_src, t_stack *stack_dest)
 {
 	t_node	*src_top;
 
@@ -27,13 +27,9 @@ void	ft_op_push(t_stack *stack_src, t_stack *stack_dest, char c)
 	stack_dest->top = src_top;
 	stack_dest->size = stack_dest->size + 1;
 	stack_src->size = stack_src->size - 1;
-	if (c == 'a')
-		ft_printf("pa\n");
-	else if (c == 'b')
-		ft_printf("pb\n");
 }
 
-void	ft_op_swap(t_stack *stack, char c)
+void	ft_op_swap(t_stack *stack)
 {
 	t_node	*first;
 	t_node	*second;
@@ -45,13 +41,9 @@ void	ft_op_swap(t_stack *stack, char c)
 	first->next = second->next;
 	second->next = first;
 	stack->top = second;
-	if (c == 'a')
-		ft_printf("sa\n");
-	if (c == 'b')
-		ft_printf("sb\n");
 }
 
-void	ft_op_rotate(t_stack *stack, char c)
+void	ft_op_rotate(t_stack *stack)
 {
 	t_node	*first;
 	t_node	*last;
@@ -65,13 +57,9 @@ void	ft_op_rotate(t_stack *stack, char c)
 	last->next = first;
 	stack->top = first->next;
 	first->next = NULL;
-	if (c == 'a')
-		ft_printf("ra\n");
-	else if (c == 'b')
-		ft_printf("rb\n");
 }
 
-void	ft_op_rev_rotate(t_stack *stack, char c)
+void	ft_op_rev_rotate(t_stack *stack)
 {
 	t_node	*last;
 	t_node	*second_last;
@@ -87,8 +75,4 @@ void	ft_op_rev_rotate(t_stack *stack, char c)
 	second_last->next = NULL;
 	last->next = stack->top;
 	stack->top = last;
-	if (c == 'a')
-		ft_printf("rra\n");
-	if (c == 'b')
-		ft_printf("rrb\n");
 }
