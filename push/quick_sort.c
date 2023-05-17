@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
+/*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:23:45 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/17 14:34:26 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:05:39 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ int	ft_get_median(t_stack *stack_a, int len, int pile)
 	return (median);
 }
 
-void	quick_sort(t_stack *stack_a, t_stack *stack_b)
+void	quick_sort(t_stack *stack_a, t_stack *stack_b, t_head *h)
 {
-	ft_quick_sort_a(stack_a, stack_b, stack_a->size);
+	ft_quick_sort_a(stack_a, stack_b, stack_a->size, h);
 	return ;
 }

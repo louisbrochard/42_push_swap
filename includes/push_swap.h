@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:17:54 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/17 16:58:22 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:06:28 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,11 @@ void	ft_op_rev_rotate(t_stack *stack, char c);
 // short_sort.c
 int		ft_is_stack_sorted2(t_stack *stack);
 int		ft_is_stack_sorted(t_stack *stack);
-int		get_min(t_stack *stack);
-void	ft_insertion_sort(t_stack *stack_a, t_stack *stack_b);
 void	ft_sort_3_elem(t_stack *stack_a);
 void	ft_sort_2_elem(t_stack *stack_a);
 
 // quick_sort.c
-void	quick_sort(t_stack *stack_a, t_stack *stack_b);
+void	quick_sort(t_stack *stack_a, t_stack *stack_b, t_head *h);
 int		ft_get_median(t_stack *stack_a, int len, int pile);
 void	ft_sort_tab(int *tab, int len);
 
@@ -77,9 +75,9 @@ void	ft_sort_tab(int *tab, int len);
 void	ft_lst_del(t_stack **stack);
 
 //A
-void	ft_quick_sort_a(t_stack *stack_a, t_stack *stack_b, int len);
+void	ft_quick_sort_a(t_stack *stack_a, t_stack *stack_b, int len, t_head *h);
 //B
-void	ft_quick_sort_b(t_stack *stack_a, t_stack *stack_b, int len);
+void	ft_quick_sort_b(t_stack *stack_a, t_stack *stack_b, int len, t_head *h);
 
 int		ft_strcmp(const char *s1, const char *s2);
 

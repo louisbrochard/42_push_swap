@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:45:22 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/17 15:36:14 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:10:07 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,23 @@ static void	ft_sort_min_b(t_stack *stack_b)
 		ft_op_swap(stack_b, 'b');
 }
 
-static void	ft_median_sort(t_stack *sa, t_stack *sb, int len, int *r, int *p)
+static void	ft_median_sort(t_head *h, int len, int *r, int *p)
 {
 	int	i;
 	int	median;
 
 	i = 0;
-	median = ft_get_median(sb, len, 2);
-	while (ft_compare_with_median(sb, len - i, median) && i++ < len)
+	median = ft_get_median(h->b, len, 2);
+	while (ft_compare_with_median(h->b, len - i, median) && i++ < len)
 	{
-		if (sb->top->value > median)
+		if (h->b->top->value > median)
 		{
-			ft_op_push(sb, sa, 'a');
+			ft_op_push(h->b, h->a, 'a');
 			*p = *p + 1;
 		}
 		else
 		{
-			ft_op_rotate(sb, 'b');
+			ft_op_rotate(h->b, 'b');
 			*r = *r + 1;
 		}
 	}
@@ -91,7 +91,7 @@ static void	ft_place(t_stack *stack_b, int *r)
 	}
 }
 
-void	ft_quick_sort_b(t_stack *stack_a, t_stack *stack_b, int len)
+void	ft_quick_sort_b(t_stack *stack_a, t_stack *stack_b, int len, t_head *h)
 {
 	int	r;
 	int	p;
@@ -103,10 +103,10 @@ void	ft_quick_sort_b(t_stack *stack_a, t_stack *stack_b, int len)
 		ft_sort_min_b(stack_b);
 		return ;
 	}
-	ft_median_sort(stack_a, stack_b, len - p, &r, &p);
-	ft_quick_sort_a(stack_a, stack_b, p);
+	ft_median_sort(h, len - p, &r, &p);
+	ft_quick_sort_a(stack_a, stack_b, p, h);
 	ft_place(stack_b, &r);
-	ft_quick_sort_b(stack_a, stack_b, len - p);
+	ft_quick_sort_b(stack_a, stack_b, len - p, h);
 	if (stack_b->top != NULL && ft_is_stack_sorted2(stack_b) == 1)
 	{
 		while (p--)
