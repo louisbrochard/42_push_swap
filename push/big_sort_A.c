@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort_A.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
+/*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:45:29 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:12 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/17 16:59:21 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int		ft_compare_with_median(t_stack *stack_a, int n, int median)
+static int	ft_compare_with_median(t_stack *stack_a, int n, int median)
 {
 	int		i;
-    t_node  *elem;
+	t_node	*elem;
 
 	i = 0;
-    elem = stack_a->top;
+	elem = stack_a->top;
 	while (i < n)
 	{
 		if (elem->value < median)
@@ -29,29 +29,10 @@ static int		ft_compare_with_median(t_stack *stack_a, int n, int median)
 	return (0);
 }
 
-/*
-static void			ft_sort_min_a(t_stack *stack_a)
+static void	ft_median_sort(t_stack *stack_a, t_stack *stack_b, int len, int *r, int *p)
 {
-    int len;
-
-    len = stack_a->size;
-	if (len > 1 && stack_a->top->value > stack_a->top->next->value)
-	    ft_op_swap(stack_a, 'a');
-	if (len > 2 && stack_a->top->value > stack_a->top->next->value)
-	{
-		ft_op_rotate(stack_a, 'a');
-		ft_op_swap(stack_a, 'a');
-		ft_op_rev_rotate(stack_a, 'a');
-	}
-	if (len > 1 && stack_a->top->value > stack_a->top->next->value)
-        ft_op_swap(stack_a, 'a');
-}
-*/
-
-static void		ft_median_sort(t_stack *stack_a, t_stack *stack_b, int len, int *r, int *p)
-{
-	int		i;
-	int		median;
+	int	i;
+	int	median;
 
 	i = 0;
 	median = 0;
@@ -60,7 +41,7 @@ static void		ft_median_sort(t_stack *stack_a, t_stack *stack_b, int len, int *r,
 	{
 		if (stack_a->top->value < median)
 		{
-            ft_op_push(stack_a, stack_b, 'b');
+			ft_op_push(stack_a, stack_b, 'b');
 			*p = *p + 1;
 		}
 		else
@@ -71,9 +52,9 @@ static void		ft_median_sort(t_stack *stack_a, t_stack *stack_b, int len, int *r,
 	}
 }
 
-static void		ft_place(t_stack *stack_a, int *r)
+static void	ft_place(t_stack *stack_a, int *r)
 {
-	int		lena;
+	int	lena;
 
 	lena = stack_a->size;
 	if (*r > (lena / 2) && lena > 3)
@@ -94,10 +75,10 @@ static void		ft_place(t_stack *stack_a, int *r)
 	}
 }
 
-void			ft_quick_sort_a(t_stack *stack_a, t_stack *stack_b, int len)
+void	ft_quick_sort_a(t_stack *stack_a, t_stack *stack_b, int len)
 {
-	int			r;
-	int			p;
+	int	r;
+	int	p;
 
 	r = 0;
 	p = 0;

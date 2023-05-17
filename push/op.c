@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
+/*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:06:02 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 16:21:56 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/17 15:24:05 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_op_push(t_stack *stack_src, t_stack *stack_dest, char c)
 	stack_dest->size = stack_dest->size + 1;
 	stack_src->size = stack_src->size - 1;
 	if (c == 'a')
-		ft_printf("pa\n");
+		write(1, "pa\n", 3);
 	else if (c == 'b')
-		ft_printf("pb\n");
+		write(1, "pb\n", 3);
 }
 
 void	ft_op_swap(t_stack *stack, char c)
@@ -46,9 +46,9 @@ void	ft_op_swap(t_stack *stack, char c)
 	second->next = first;
 	stack->top = second;
 	if (c == 'a')
-		ft_printf("sa\n");
+		write(1, "sa\n", 3);
 	if (c == 'b')
-		ft_printf("sb\n");
+		write(1, "sb\n", 3);
 }
 
 void	ft_op_rotate(t_stack *stack, char c)
@@ -66,9 +66,9 @@ void	ft_op_rotate(t_stack *stack, char c)
 	stack->top = first->next;
 	first->next = NULL;
 	if (c == 'a')
-		ft_printf("ra\n");
+		write(1, "ra\n", 3);
 	else if (c == 'b')
-		ft_printf("rb\n");
+		write(1, "rb\n", 3);
 }
 
 void	ft_op_rev_rotate(t_stack *stack, char c)
@@ -88,7 +88,7 @@ void	ft_op_rev_rotate(t_stack *stack, char c)
 	last->next = stack->top;
 	stack->top = last;
 	if (c == 'a')
-		ft_printf("rra\n");
+		write(1, "rra\n", 4);
 	if (c == 'b')
-		ft_printf("rrb\n");
+		write(1, "rrb\n", 4);
 }

@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
+/*   By: lbrochar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 19:13:47 by lbrochar          #+#    #+#             */
-/*   Updated: 2023/05/15 13:28:51 by louisbrocha      ###   ########.fr       */
+/*   Created: 2023/05/17 15:44:56 by lbrochar          #+#    #+#             */
+/*   Updated: 2023/05/17 15:45:24 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/push_swap.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t n)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	if (n == 0)
-		return (ft_strlen(src));
-	while ((i < (n - 1)) && src[i])
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

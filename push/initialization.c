@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialization.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
+/*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:56:30 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:30 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/17 16:55:50 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,19 @@ void	ft_push_init(t_stack *stack, int value)
 
 void	ft_init(t_stack **stack_a, t_stack **stack_b, int argc, char **argv)
 {
-    int i;
+	int	i;
 
-    *stack_a = malloc(sizeof(t_stack));
-    (*stack_a)->top = NULL;
-    (*stack_a)->size = 0;
-    i = argc;
-    while(i-- > 1)
-        ft_push_init(*stack_a, ft_atoi2(argv[i]));
-    *stack_b = malloc(sizeof(t_stack));
-    (*stack_b)->top = NULL;
-    (*stack_b)->size = 0;
+	*stack_a = malloc(sizeof(t_stack));
+	if (!(*stack_a))
+		return ;
+	(*stack_a)->top = NULL;
+	(*stack_a)->size = 0;
+	i = argc;
+	while (i-- > 1)
+		ft_push_init(*stack_a, ft_atoi2(argv[i]));
+	*stack_b = malloc(sizeof(t_stack));
+	if (!(*stack_a))
+		return ;
+	(*stack_b)->top = NULL;
+	(*stack_b)->size = 0;
 }

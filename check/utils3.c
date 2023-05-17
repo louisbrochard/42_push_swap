@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
+/*   By: lbrochar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 18:17:48 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:01:45 by louisbrocha      ###   ########.fr       */
+/*   Created: 2023/05/17 15:48:10 by lbrochar          #+#    #+#             */
+/*   Updated: 2023/05/17 15:48:17 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
+#include "../includes/checker.h"
 
 size_t	ft_strlen2(char *str)
 {

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
+/*   By: lbrochar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 21:27:43 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 13:50:17 by louisbrocha      ###   ########.fr       */
+/*   Created: 2023/05/17 15:47:48 by lbrochar          #+#    #+#             */
+/*   Updated: 2023/05/17 15:47:58 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
+#include "../includes/checker.h"
 
 char	*ft_backup(char *backup)
 {

@@ -6,11 +6,11 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:56:30 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 15:26:34 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/17 14:42:29 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../includes/push_swap.h"
 
 void	ft_push_init(t_stack *stack, int value)
 {
@@ -29,15 +29,15 @@ void	ft_push_init(t_stack *stack, int value)
 
 void	ft_init(t_stack **stack_a, t_stack **stack_b, int argc, char **argv)
 {
-    int i;
+	int	i;
 
-    *stack_a = malloc(sizeof(t_stack));
-    (*stack_a)->top = NULL;
-    (*stack_a)->size = 0;
-    i = argc;
-    while(i-- > 1)
-        ft_push_init(*stack_a, ft_atoi2(argv[i]));
-    *stack_b = malloc(sizeof(t_stack));
-    (*stack_b)->top = NULL;
-    (*stack_b)->size = 0;
+	*stack_a = malloc(sizeof(t_stack));
+	(*stack_a)->top = NULL;
+	(*stack_a)->size = 0;
+	i = argc;
+	while (i-- > 1)
+		ft_push_init(*stack_a, ft_atoi2(argv[i]));
+	*stack_b = malloc(sizeof(t_stack));
+	(*stack_b)->top = NULL;
+	(*stack_b)->size = 0;
 }
