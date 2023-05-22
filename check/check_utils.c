@@ -3,23 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   check_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
+/*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:28:11 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 15:24:36 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/22 16:27:20 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int	ft_isdigit(int c)
+int	s(int c)
+{
+	if (c == 32)
+		return (1);
+	return (0);
+}
+
+int	digit(int c)
 {
 	if (c > 47 && c < 58)
 		return (1);
 	return (0);
 }
 
-int	ft_is_sign(char c)
+int	sign(char c)
 {
 	if (c == '-' || c == '+')
 		return (1);

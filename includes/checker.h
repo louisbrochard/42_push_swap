@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 14:28:19 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/17 15:58:56 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:53:19 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,9 @@ typedef struct s_stack
 
 // check_utils.c
 long	ft_atoi2(const char *str);
-int		ft_is_sign(char c);
-int		ft_isdigit(int c);
+int		sign(char c);
+int		digit(int c);
+int		s(int c);
 
 // check.c
 int		ft_check_arg(char **argv);
@@ -53,6 +54,7 @@ void	ft_free_stack(t_stack **stack);
 // initialization.c
 void	ft_init(t_stack **stack_a, t_stack **stack_b, int argc, char **argv);
 void	ft_push_init(t_stack *stack, int value);
+void	ft_init2(t_stack **stack_a, t_stack **stack_b, int argc, char **argv);
 
 // list_del.c
 void	ft_lst_del(t_stack **stack);
@@ -77,5 +79,11 @@ char	*ft_strjoin2(char *s1, char *s2);
 void	ft_boucle(char *s1, char *s2, char *str);
 char	*ft_strchr2(char *s, int c);
 size_t	ft_strlen2(char *str);
+int		ft_strlen(const char *str);
+size_t	ft_strlcpy(char *dest, const char *src, size_t n);
+int		ft_is_stack_sorted(t_stack *stack);
+
+// split.c
+char	**ft_split(const char *str, char c);
 
 #endif

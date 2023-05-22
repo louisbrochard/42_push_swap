@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
+/*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:20:18 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 14:16:06 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/05/22 16:42:49 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int	ft_argv_is_nb(char *str)
 	check = ft_atoi2(str);
 	if (check > 2147483647 || check < INT_MIN)
 		return (1);
-	if (ft_is_sign(str[i]) == 1)
+	if (sign(str[i]) == 1)
 		i++;
-	if (ft_isdigit(str[i]) == 1)
+	if (digit(str[i]) == 1)
 	{
-		while (ft_isdigit(str[i]) == 1)
+		while (digit(str[i]) == 1)
 			i++;
 	}
 	else

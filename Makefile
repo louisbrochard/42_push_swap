@@ -6,7 +6,7 @@
 #    By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 02:15:09 by louisbrocha       #+#    #+#              #
-#    Updated: 2023/05/17 16:33:43 by lbrochar         ###   ########.fr        #
+#    Updated: 2023/05/22 16:19:57 by lbrochar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,8 @@ _SRCS_C = main.c \
 		op.c \
 		utils.c \
 		utils2.c \
-		utils3.c
-
+		utils3.c \
+		ft_split.c
 
 _SRCS_P = big_sort_A.c \
 		big_sort_B.c \
@@ -39,7 +39,8 @@ _SRCS_P = big_sort_A.c \
 		quick_sort.c \
 		short_sort.c \
 		utils.c \
-		ft_sort_3_elem.c
+		ft_sort_3_elem.c \
+		ft_split.c
 
 SRCS_C_DIR = check
 SRCS_P_DIR = push

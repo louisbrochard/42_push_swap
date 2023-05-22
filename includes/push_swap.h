@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:17:54 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/17 17:06:28 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:53:42 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	ft_free_stack(t_stack **stack);
 // initialization.c
 void	ft_init(t_stack **stack_a, t_stack **stack_b, int argc, char **argv);
 void	ft_push(t_stack *stack, int value);
+void	ft_init2(t_stack **stack_a, t_stack **stack_b, int argc, char **argv);
 
 // check.c
 int		ft_check_arg(char **argv);
@@ -50,9 +51,10 @@ int		ft_check_duplicate(char **argv);
 int		ft_is_sorted(char **argv);
 
 // check_utils.c
-int		ft_isdigit(int c);
+int		digit(int c);
 long	ft_atoi2(const char *str);
-int		ft_is_sign(char c);
+int		sign(char c);
+int		s(int c);
 
 // op.c
 void	ft_op_swap(t_stack *stack, char c);
@@ -67,7 +69,7 @@ void	ft_sort_3_elem(t_stack *stack_a);
 void	ft_sort_2_elem(t_stack *stack_a);
 
 // quick_sort.c
-void	quick_sort(t_stack *stack_a, t_stack *stack_b, t_head *h);
+void	quick_sort(t_stack *stack_a, t_stack *stack_b, t_head *h, int n);
 int		ft_get_median(t_stack *stack_a, int len, int pile);
 void	ft_sort_tab(int *tab, int len);
 
@@ -79,6 +81,12 @@ void	ft_quick_sort_a(t_stack *stack_a, t_stack *stack_b, int len, t_head *h);
 //B
 void	ft_quick_sort_b(t_stack *stack_a, t_stack *stack_b, int len, t_head *h);
 
+// utils
 int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strlen(const char *str);
+size_t	ft_strlcpy(char *dest, const char *src, size_t n);
+
+// ft_split.c
+char	**ft_split(const char *str, char c);
 
 #endif

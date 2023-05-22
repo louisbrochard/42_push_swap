@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:23:45 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/17 17:05:39 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:36:50 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,13 @@ int	ft_get_median(t_stack *stack_a, int len, int pile)
 	return (median);
 }
 
-void	quick_sort(t_stack *stack_a, t_stack *stack_b, t_head *h)
+void	quick_sort(t_stack *stack_a, t_stack *stack_b, t_head *h, int n)
 {
-	ft_quick_sort_a(stack_a, stack_b, stack_a->size, h);
+	if (n == 3)
+		ft_op_rotate(stack_a, 'a');
+	else if (n == 4)
+		ft_sort_3_elem(stack_a);
+	else
+		ft_quick_sort_a(stack_a, stack_b, stack_a->size, h);
 	return ;
 }
