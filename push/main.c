@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:09:21 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/22 16:47:29 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:02:36 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	ft_need_parse(int argc, char **argv)
 
 	i = 0;
 	if (argc != 2)
+		return (1);
+	if (ft_check_space(argv[1]) == 0)
 		return (1);
 	while (argv[1][i] != 0)
 	{

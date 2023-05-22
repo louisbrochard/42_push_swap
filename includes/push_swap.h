@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:17:54 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/22 16:53:42 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/22 17:58:39 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int		digit(int c);
 long	ft_atoi2(const char *str);
 int		sign(char c);
 int		s(int c);
+int		ft_check_space(char *str);
 
 // op.c
 void	ft_op_swap(t_stack *stack, char c);

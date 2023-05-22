@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 14:27:42 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/22 16:50:41 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:06:13 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	if (argc <= 2 && ft_need_parse(argc, argv) == 1)
+	if (argc < 2)
 		return (0);
 	if (argc == 2 && ft_need_parse(argc, argv) == 0)
 	{

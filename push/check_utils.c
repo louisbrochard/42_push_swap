@@ -6,11 +6,25 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:28:11 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/22 16:42:29 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:09:26 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	ft_check_space(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (s(str[i]) == 1)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 int	s(int c)
 {
