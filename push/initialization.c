@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:56:30 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/22 18:02:04 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:50:52 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ void	ft_init(t_stack **stack_a, t_stack **stack_b, int argc, char **argv)
 
 	*stack_a = malloc(sizeof(t_stack));
 	if (!(*stack_a))
-		return ;
+		ft_exit_error(NULL, NULL);
 	(*stack_a)->top = NULL;
 	(*stack_a)->size = 0;
 	i = argc;
 	while (i-- > 1)
 		ft_push_init(*stack_a, ft_atoi2(argv[i]));
 	*stack_b = malloc(sizeof(t_stack));
-	if (!(*stack_a))
-		return ;
+	if (!(*stack_b))
+		ft_exit_error(stack_a, NULL);
 	(*stack_b)->top = NULL;
 	(*stack_b)->size = 0;
 }
@@ -52,15 +52,15 @@ void	ft_init2(t_stack **stack_a, t_stack **stack_b, int argc, char **argv)
 
 	*stack_a = malloc(sizeof(t_stack));
 	if (!(*stack_a))
-		return ;
+		ft_exit_error(NULL, NULL);
 	(*stack_a)->top = NULL;
 	(*stack_a)->size = 0;
 	i = argc;
 	while (i-- > 0)
 		ft_push_init(*stack_a, ft_atoi2(argv[i]));
 	*stack_b = malloc(sizeof(t_stack));
-	if (!(*stack_a))
-		return ;
+	if (!(*stack_b))
+		ft_exit_error(stack_a, NULL);
 	(*stack_b)->top = NULL;
 	(*stack_b)->size = 0;
 }

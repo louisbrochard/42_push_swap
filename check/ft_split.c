@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 20:09:20 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/22 16:12:19 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:50:26 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ char	**ft_split(const char *str, char c)
 	int		i;
 
 	if (str == 0)
-		return (0);
+		ft_exit_error(NULL, NULL);
 	while (*str && *str == c)
 		str++;
 	arr = (char **)malloc(sizeof(char *) * (count_words(str, c) + 1));
 	if (arr == 0)
-		return (0);
+		ft_exit_error(NULL, NULL);
 	i = 0;
 	while (*str)
 	{
