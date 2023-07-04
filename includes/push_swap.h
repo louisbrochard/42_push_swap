@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:17:54 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/22 17:58:39 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/07/04 13:13:47 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_head
 
 // exit_free.c
 void	ft_exit_error(t_stack **stack_a, t_stack **stack_b);
-void	ft_free_stack(t_stack **stack);
+int		ft_free_total(t_head **head, t_stack **stack_a, t_stack **stack_b);
 
 // initialization.c
 void	ft_init(t_stack **stack_a, t_stack **stack_b, int argc, char **argv);

@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 14:28:19 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/22 16:53:19 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/07/04 13:13:29 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int		ft_is_sorted(char **argv);
 // exit_free.c
 void	ft_exit_error(t_stack **stack_a, t_stack **stack_b);
 void	ft_free_stack(t_stack **stack);
+int		ft_free_total(t_stack **stack_a, t_stack **stack_b);
 
 // initialization.c
 void	ft_init(t_stack **stack_a, t_stack **stack_b, int argc, char **argv);

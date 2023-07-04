@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:09:21 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/22 18:02:36 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/07/04 13:12:05 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_init_head(t_head **head, t_stack *stack_a, t_stack *stack_b)
 {
 	*head = malloc(sizeof(t_stack));
 	if (!(*head))
-		return ;
+		ft_exit_error(&stack_a, &stack_b);
 	(*head)->a = stack_a;
 	(*head)->b = stack_b;
 }
@@ -88,7 +88,7 @@ int	main(int argc, char **argv)
 	}
 	ft_init_head(&head, stack_a, stack_b);
 	if (ft_is_stack_sorted(stack_a) == 0)
-		return (0);
+		return (ft_free_total(&head, &stack_a, &stack_b));
 	quick_sort(stack_a, stack_b, head, argc);
 	ft_clean(stack_a, stack_b);
 	free(head);

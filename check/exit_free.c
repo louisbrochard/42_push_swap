@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_free.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
+/*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:16:20 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/15 15:24:53 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/07/04 13:06:23 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,11 @@ void	ft_exit_error(t_stack **stack_a, t_stack **stack_b)
 		ft_free_stack(stack_b);
 	write(2, "Error\n", 6);
 	exit (1);
+}
+
+int	ft_free_total(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_free_stack(stack_a);
+	ft_free_stack(stack_b);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lbrochar <lbrochar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 14:27:42 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/05/22 18:06:13 by lbrochar         ###   ########.fr       */
+/*   Updated: 2023/07/04 13:07:09 by lbrochar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	ft_checker(t_stack *stack_a, t_stack *stack_b)
 	while (str != NULL)
 	{
 		ft_move(str, stack_a, stack_b);
+		free(str);
 		str = get_next_line(0);
 	}
 	free(str);
@@ -88,7 +89,7 @@ int	main(int argc, char **argv)
 		ft_init(&stack_a, &stack_b, argv_len(argv), argv);
 	}
 	if (ft_is_stack_sorted(stack_a) == 0)
-		return (0);
+		return (ft_free_total(&stack_a, &stack_b));
 	ft_checker(stack_a, stack_b);
 	ft_check_stack(stack_a, stack_b);
 	ft_clean(stack_a, stack_b);
